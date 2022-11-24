@@ -28,21 +28,23 @@ fun MainSreen() {
         modifier = Modifier.fillMaxSize()
     ) {
         Row {
-            Surface(
-                color = Color.Magenta,
-                modifier = Modifier
-                    .height(600.dp)
-                    .width(60.dp)
-            ) {
-            }
-            Surface(
-                color = Color.Red,
-                modifier = Modifier
-                    .height(600.dp)
-                    .width(60.dp)
-            ) {
-            }
+            HorizontalColoredBar(Color.Red)
+            HorizontalColoredBar(Color.Magenta)
+            HorizontalColoredBar(Color.Cyan)
+            HorizontalColoredBar(Color.Yellow)
+            HorizontalColoredBar(Color.Blue)
         }
+    }
+}
+
+@Composable
+fun HorizontalColoredBar(mColor: Color) {
+    Surface(
+        color = mColor,
+        modifier = Modifier
+            .height(600.dp)
+            .width(60.dp)
+    ) {
     }
 }
 
