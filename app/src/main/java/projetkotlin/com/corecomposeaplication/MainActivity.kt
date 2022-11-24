@@ -33,22 +33,27 @@ fun MainSreen() {
             verticalArrangement = Arrangement.SpaceEvenly,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            HorizontalColoredBar(Color.Red)
-            HorizontalColoredBar(Color.Magenta)
-            HorizontalColoredBar(Color.Cyan)
-            HorizontalColoredBar(Color.Yellow)
-            HorizontalColoredBar(Color.Blue)
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                ColoredSquare(Color.Red)
+                ColoredSquare(Color.Magenta)
+            }
+            ColoredSquare(Color.Cyan)
+            ColoredSquare(Color.Yellow)
+            ColoredSquare(Color.Blue)
         }
     }
 }
 
 @Composable
-fun HorizontalColoredBar(mColor: Color) {
+fun ColoredSquare(mColor: Color) {
     Surface(
         color = mColor,
         modifier = Modifier
             .height(100.dp)
-            .width(358.dp)
+            .width(100.dp)
     ) {
     }
 }
